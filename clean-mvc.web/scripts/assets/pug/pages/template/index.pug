@@ -1,0 +1,972 @@
+- var theme_customizer      = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var page_datatable_select = true;
+- var datatable_select      = true;
+- var apex                  = true;
+- var vector_map            = true;
+- var dashboard_default     = true;
+- var notify                = true;
+- var animate               = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var sidebar               = true;
+- var scrollbar             = true;
+- var wow                   = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+          // Container-fluid starts
+          .container-fluid.dashboard_default
+            .row.widget-grid
+              .col-12 
+                .page-title.mt-2
+                  .row
+                    .col-sm-6.ps-0
+                      h3
+                        | Shopping place Dashboard
+                    .col-sm-6.pe-0
+                      ol.breadcrumb
+                        li.breadcrumb-item
+                          a(href='index.html')                                        
+                            svg.stroke-icon
+                              use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                        li.breadcrumb-item Dashboard
+                        li.breadcrumb-item.active Default
+              .col-xl-4.col-lg-6.col-sm-12.box-col-4
+                .card.total-earning
+                  .card-body
+                    .row 
+                      .col-sm-7.box-col-7
+                        .d-flex
+                          .badge.bg-light-primary.badge-rounded.font-primary.me-2 $
+                          .flex-grow-1 
+                            h3 Total Earning
+                        h5 $20.790
+                        p.d-flex
+                          span.bg-light-secondary.me-2
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#arrow-down')
+                          span.font-secondary.me-2 - 36.28%
+                          span Since last month
+                      .col-sm-5.box-col-5
+                        #expensesChart
+              .col-xl-4.col-lg-6.col-sm-12.box-col-4
+                .card.total-earning
+                  .card-body
+                    .row 
+                      .col-sm-7.box-col-7
+                        .d-flex
+                          .badge.bg-light-dark.badge-rounded.font-primary.me-2
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#fill-Buy')
+                          .flex-grow-1 
+                            h3 Total Sales
+                        h5 $65.340
+                        p.d-flex
+                          span.bg-light-dark.me-2
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#arrow-up')
+                          span.font-dark.me-2 - 90.28%
+                          span Then last Week
+                      .col-sm-5.box-col-5
+                        #totalLikesAreaChart
+              .col-xl-4.col-lg-12.col-sm-12.box-col-4
+                .card.total-earning
+                  .card-body
+                    .row 
+                      .col-sm-7.box-col-7
+                        .d-flex
+                          .badge.bg-light-secondary.badge-rounded.font-primary.me-2
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#user')
+                          .flex-grow-1 
+                            h3 Total Visitors
+                        h5 $46.564
+                        p.d-flex
+                          span.bg-light-secondary.me-2
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#arrow-down')
+                          span.font-secondary.me-2 - 25.28%
+                          span Since last month
+                      .col-sm-5.box-col-5.incom-chart
+                        #Incomechrt
+              .col-xl-6
+                  .card.invoice-card
+                    .card-header.pb-0
+                      h3 Recent Orders
+                    .card-body.transaction-card
+                      .table-responsive.theme-scrollbar
+                        table#recent-order.display(style='width:100%')
+                          thead
+                            tr
+                              th Id
+                              th Product Name
+                              th Date
+                              th Payment
+                              th Status
+                              th Total
+                          tbody
+                            tr
+                              td A8576
+                              td
+                                .d-flex
+                                  .flex-shrink-0
+                                    img(src='../assets/images/dashboard/user/01.png' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h4 Nike Sports
+                                      span Free delivery
+                              td Aug 15,2023
+                              td 
+                                button.btn Paid
+                              td.txt-warning Delivered
+                              td $44.54
+                            tr
+                              td K6556
+                              td
+                                .d-flex
+                                  .flex-shrink-0
+                                    img(src='../assets/images/dashboard/user/02.png' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h4 Women Bag
+                                      span $83.97 delivery
+                              td Aug 25,2023
+                              td 
+                                button.btn Paid
+                              td.txt-primary Pending
+                              td $51.50
+                            tr
+                              td Y6485
+                              td
+                                .d-flex
+                                  .flex-shrink-0
+                                    img(src='../assets/images/dashboard/user/03.png' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h4 Sunglasses
+                                      span Free delivery
+                              td May 08,2023
+                              td 
+                                button.btn Paid
+                              td.txt-danger Cancel
+                              td $64.16
+                            tr
+                              td G5653
+                              td
+                                .d-flex
+                                  .flex-shrink-0
+                                    img(src='../assets/images/dashboard/user/04.png' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h4 Men T-shirt
+                                      span $12.55 delivery
+                              td Feb 14,2023
+                              td 
+                                button.btn Unpaid
+                              td.txt-warning Delivered
+                              td $35.95
+              .col-xl-3.col-md-6.col-lg-6.box-col-3
+                .row
+                  .col-md-12.col-sm-12
+                    .card.top-seller
+                      .card-header.card-no-border
+                        .header-top
+                          h3.m-0 Top Seller
+                          .card-header-right
+                            ul.list-unstyled.card-option
+                              li
+                                div
+                                  i.icon-settings
+                              li
+                                i.view-html.fa.fa-code
+                              li
+                                i.icofont.icofont-maximize.full-card
+                              li
+                                i.icofont.icofont-minus.minimize-card
+                              li
+                                i.icofont.icofont-refresh.reload-card
+                              li
+                                i.icofont.icofont-error.close-card
+                      .card-body.pt-0 
+                        .seller-top 
+                          button Trending
+                          h4 
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#location')
+                            | jail Road,Sylhet  
+                        .user-details.customers
+                          div 
+                            h3 VK Enterprise
+                            ul 
+                              li.d-inline-block
+                                img.img-30.rounded-circle(src="../assets/images/dashboard/user/09.jpg", alt="user")
+                              li.d-inline-block
+                                img.img-30.rounded-circle(src="../assets/images/dashboard/user/010.jpg", alt="user")
+                              li.d-inline-block
+                                img.img-30.rounded-circle(src="../assets/images/dashboard/user/011.jpg", alt="user")
+                              li.d-inline-block
+                                img.img-30.rounded-circle(src="../assets/images/dashboard/user/08.jpg", alt="user")
+                              li.d-inline-block
+                                .light-card
+                                  span.f-w-500 +5
+                          div.sale-improved
+                            h4 60% Sale
+                        .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#top-seller')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#top-seller
+                              |&lt;div class="card"&gt;
+                              | &lt;div class="card-header card-no-border"&gt;
+                              |   &lt;div class="header-top"&gt;
+                              |      &lt;h4&gt; Top Seller&lt;/h4&gt;
+                              |   &lt;div class="card-header-right"&gt;
+                              |     &lt;ul class="list-unstyled card-option&gt;
+                              |       &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+                              |       &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                              |       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                              |       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                              |       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                              |       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+                              |     &lt;/ul&gt;
+                              |   &lt;/div&gt;
+                              |    &lt;div class="card-body pt-0"&gt;
+                              |     &lt;div class="seller-top"&gt;
+                              |       &lt;button&gt; Trending;
+                              |       &lt;h4&gt;
+                              |         &lt;svg&gt;
+                              |           &lt;use href="../assets/svg/icon-sprite.svg#fill-Buy"&gt;
+                              |         &lt;/svg&gt;
+                              |         jail Road,Sylhet  
+                              |       &lt;/h4&gt;
+                              |     &lt;/div&gt;
+                              |     &lt;div class="user-details customers"&gt;
+                              |       &lt;div&gt;
+                              |         &lt;h3&gt; VK Enterprise&lt;/h4&gt;
+                              |         &lt;ul&gt;
+                              |           &lt;li class="d-inline-block"&gt;
+                              |             &lt;img class="img-40 rounded-circle" src="../assets/images/dashboard/user/09.jpg" alt="user"&gt;
+                              |           &lt;/li&gt;
+                              |           &lt;li class="d-inline-block"&gt;
+                              |             &lt;img class="img-40 rounded-circle" src="../assets/images/dashboard/user/010.jpg" alt="user"&gt;
+                              |           &lt;/li&gt;
+                              |           &lt;li class="d-inline-block"&gt;
+                              |             &lt;img class="img-40 rounded-circle" src="../assets/images/dashboard/user/011.jpg" alt="user"&gt;
+                              |           &lt;/li&gt;
+                              |           &lt;li class="d-inline-block"&gt;
+                              |             &lt;img class="img-40 rounded-circle" src="../assets/images/dashboard/user/08.jpg" alt="user"&gt;
+                              |           &lt;/li&gt;
+                              |           &lt;li class="d-inline-block"&gt;
+                              |             &lt;div class="light-card"&gt;
+                              |               &lt;span class="f-w-500"&gt;+5&lt;/span&gt;
+                              |             &lt;/div&gt;
+                              |           &lt;/li&gt;
+                              |         &lt;/ul&gt;
+                              |       &lt;/div&gt;
+                              |       &lt;div class="sale-improved"&gt;
+                              |         &lt;h4&gt; 60%&lt;/h4&gt;
+                              |       &lt;/div&gt;
+                              |      &lt;/div&gt;
+                  .col-md-12.col-sm-12
+                    .card.selling-product
+                      .card-header.card-no-border
+                        .header-top
+                          h3.m-0 Top Selling Product
+                      .card-body.pt-0
+                        ul.selling-box.bg-light-primary
+                          li
+                            .d-flex
+                              .flex-shrink-0
+                                img(src='../assets/images/dashboard/04.png' alt="")
+                              .flex-grow-1 
+                                a(href="product-page.html")
+                                  h4 Bluetooth-Handphone
+                                  p Welltech SH 12 Bluetooth Headphone Bluetooth
+                                .d-flex.align-items-center.gap-0
+                                  h4 4.5
+                                  p.pull-right.ms-2
+                                    i.fa.fa-star.font-secondary
+                              a(href="cart.html")
+                                span 
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#fill-Buy')
+              .col-xl-3.col-md-6.box-col-3
+                .card
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h3.m-0 New Product
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            div
+                              i.icon-settings
+                          li
+                            i.view-html.fa.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                  .card-body.pt-0.product-card
+                    .table-responsive.theme-scrollbar
+                      table.table.display(style='width:100%')
+                        thead
+                          tr
+                            th Name
+                            th Code
+                            th price
+                        tbody
+                          tr
+                            td
+                              .d-flex
+                                img(src='../assets/images/dashboard/10.jpg' alt="")
+                                .flex-grow-1.ms-2
+                                  a(href="product-page.html")
+                                    span Pot
+                                    h5 100 
+                                .active-status.active-online
+                            td 
+                              span Coupon Code
+                              h5 1PIX001
+                            td     
+                              span -65%
+                              h5 $99.00
+                          tr
+                            td
+                              .d-flex
+                                img(src='../assets/images/dashboard/11.jpg' alt="")
+                                .flex-grow-1.ms-2
+                                  a(href="product-page.html")
+                                    span iphone
+                                    h5 150 Item
+                                .active-status.active-online
+                            td 
+                              span Coupon Code
+                              h5 HT463
+                            td     
+                              span -15%
+                              h5 $65.00
+                          tr
+                            td
+                              .d-flex
+                                img(src='../assets/images/dashboard/12.jpg' alt="")
+                                .flex-grow-1.ms-2
+                                  a(href="product-page.html")
+                                    span Headphone
+                                    h5 513 Item
+                                .active-status.active-online
+                            td 
+                              span Coupon Code
+                              h5 LP72K
+                            td     
+                              span -92%
+                              h5 $84.00
+                          tr
+                            td
+                              .d-flex
+                                img(src='../assets/images/dashboard/13.jpg' alt="")
+                                .flex-grow-1.ms-2
+                                  a(href="product-page.html")
+                                    span Glass
+                                    h5 629 Item
+                                .active-status.active-online
+                            td 
+                              span Coupon Code
+                              h5 REA75
+                            td     
+                              span -37%
+                              h5 $24.00
+                          tr
+                            td
+                              .d-flex
+                                img(src='../assets/images/dashboard/14.jpg' alt="")
+                                .flex-grow-1.ms-2
+                                  a(href="product-page.html")
+                                    span Watch
+                                    h5 896 Item
+                                .active-status.active-online
+                            td 
+                              span Coupon Code
+                              h5 XRT839
+                            td     
+                              span -91%
+                              h5 $91.00
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#product-card')
+                        i.icofont.icofont-copy-alt
+                      pre
+                        code.language-html#product-card
+                          |&lt;div class="card"&gt;
+                          | &lt;div class="card-header card-no-border pb-0"&gt;
+                          |   &lt;div class="header-top"&gt;
+                          |      &lt;h3 class="m-0"&gt; Top Seller&lt;/h3&gt;
+                          |   &lt;div class="card-header-right"&gt;
+                          |     &lt;ul class="list-unstyled card-option&gt;
+                          |       &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+                          |       &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+                          |     &lt;/ul&gt;
+                          |   &lt;/div&gt;
+                          |    &lt;div class="card-body pt-0 product-card"&gt;
+                          |     &lt;div class="table-responsive theme-scrollbar"&gt;
+                          |       &lt;table class="table display" style="width:100%"&gt;
+                          |         &lt;thead&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;th&gt;Name&lt;/th&gt;
+                          |             &lt;th&gt;Code&lt;/th&gt;
+                          |             &lt;th&gt;price&lt;/th&gt;
+                          |           &lt;/tr&gt;
+                          |         &lt;/thead&gt;
+                          |         &lt;tbody&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;td&gt;
+                          |               &lt;div class="d-flex"&gt;
+                          |                 &lt;img src="../assets/images/dashboard/10.jpg"&gt;
+                          |                 &lt;div class="flex-grow-1 ms-2"&gt;
+                          |                   &lt;a href="product-page.html"&gt;
+                          |                     &lt;h5&gt;Pot&lt;/h5&gt;
+                          |                     &lt;span&gt;100&lt;/span&gt;
+                          |                   &lt;/a&gt;
+                          |                 &lt;/div&gt;
+                          |                 &lt;div class="active-status active-online"&gt;
+                          |               &lt;/div&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;Coupon Code&lt;/h5&gt;
+                          |               &lt;span&gt;1PIX001&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;-65%&lt;/h5&gt;
+                          |               &lt;span&gt;$99.00&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;td&gt;
+                          |               &lt;div class="d-flex"&gt;
+                          |                 &lt;img src="../assets/images/dashboard/11.jpg"&gt;
+                          |                 &lt;div class="flex-grow-1 ms-2"&gt;
+                          |                   &lt;a href="product-page.html"&gt;
+                          |                     &lt;h5&gt;iphone&lt;/h5&gt;
+                          |                     &lt;span&gt;150 Item&lt;/span&gt;
+                          |                   &lt;/a&gt;
+                          |                 &lt;/div&gt;
+                          |                 &lt;div class="active-status active-online"&gt;
+                          |               &lt;/div&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;Coupon Code&lt;/h5&gt;
+                          |               &lt;span&gt;HT463&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;-15%&lt;/h5&gt;
+                          |               &lt;span&gt;$65.00&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;td&gt;
+                          |               &lt;div class="d-flex"&gt;
+                          |                 &lt;img src="../assets/images/dashboard/12.jpg"&gt;
+                          |                 &lt;div class="flex-grow-1 ms-2"&gt;
+                          |                   &lt;a href="product-page.html"&gt;
+                          |                     &lt;h5&gt;Headphone&lt;/h5&gt;
+                          |                     &lt;span&gt;513 Item&lt;/span&gt;
+                          |                   &lt;/a&gt;
+                          |                 &lt;/div&gt;
+                          |                 &lt;div class="active-status active-online"&gt;
+                          |               &lt;/div&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;Coupon Code&lt;/h5&gt;
+                          |               &lt;span&gt;LP72K&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;-92%&lt;/h5&gt;
+                          |               &lt;span&gt;$84.00&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;td&gt;
+                          |               &lt;div class="d-flex"&gt;
+                          |                 &lt;img src="../assets/images/dashboard/10.jpg"&gt;
+                          |                 &lt;div class="flex-grow-1 ms-2"&gt;
+                          |                   &lt;a href="product-page.html"&gt;
+                          |                     &lt;h5&gt;Glass&lt;/h5&gt;
+                          |                     &lt;span&gt;629 Item&lt;/span&gt;
+                          |                   &lt;/a&gt;
+                          |                 &lt;/div&gt;
+                          |                 &lt;div class="active-status active-online"&gt;
+                          |               &lt;/div&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;Coupon Code&lt;/h5&gt;
+                          |               &lt;span&gt;REA75&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;-37%&lt;/h5&gt;
+                          |               &lt;span&gt;$24.00&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |           &lt;tr&gt;
+                          |             &lt;td&gt;
+                          |               &lt;div class="d-flex"&gt;
+                          |                 &lt;img src="../assets/images/dashboard/10.jpg"&gt;
+                          |                 &lt;div class="flex-grow-1 ms-2"&gt;
+                          |                   &lt;a href="product-page.html"&gt;
+                          |                     &lt;h5&gt;Watch&lt;/h5&gt;
+                          |                     &lt;span&gt;896 Item&lt;/span&gt;
+                          |                   &lt;/a&gt;
+                          |                 &lt;/div&gt;
+                          |                 &lt;div class="active-status active-online"&gt;
+                          |               &lt;/div&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;Coupon Code&lt;/h5&gt;
+                          |               &lt;span&gt;XRT839&lt;/span&gt;
+                          |             &lt;/td&gt;
+                          |             &lt;td&gt;
+                          |               &lt;h5&gt;-91%&lt;/h5&gt;
+                          |               &lt;span&gt;$91.00&lt;/span&gt;
+                          |             &lt;/td&gt;
+              .col-xxl-3.col-xl-4.col-md-6.box-col-4
+                .card.use-country
+                  .card-header.pb-0
+                    h3.m-0 Top Countries
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          div
+                            i.icon-settings
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-
+                  .card-body.mt-0.state
+                    ul.d-flex
+                      li.light-card.balance-card.bg-light-primary
+                        img(src='../assets/images/dashboard/04.jpg' alt="")
+                        .Countries
+                          span.rounded-pill.badge-primary
+                          h5 Uniter States
+                          h6.mt-1.mb-0 60%
+                      li.light-card.balance-card.bg-light-secondary
+                        img(src='../assets/images/dashboard/05.jpg' alt="")
+                        .Countries
+                          span.rounded-pill.badge-secondary
+                          h5 Germany
+                          h6.mt-1.mb-0 51%
+                      li.light-card.balance-card.bg-light-dark
+                        img(src='../assets/images/dashboard/06.jpg' alt="")
+                        .Countries
+                          span.rounded-pill.badge-dark
+                          h5 New Zealand
+                          h6.mt-1.mb-0 52%
+                      li.light-card.balance-card.bg-light-warning
+                        img(src='../assets/images/dashboard/07.jpg' alt="")
+                        .Countries
+                          span.rounded-pill.badge-warning
+                          h5 Australia
+                          h6.mt-1.mb-0 62%
+                    .col-xl-12.mt-4
+                      #asia.jvector-map-height
+                    .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#use-country')
+                          i.icofont.icofont-copy-alt
+                        pre
+                          code.language-html#use-country
+                            |&lt;div class="card use-country"&gt;
+                            | &lt;div class="card-header"&gt;
+                            |   &lt;h3 class="m-0"&gt;Top Countries&lt;/h3&gt;
+                            |   &lt;div class="card-header-right"&gt;
+                            |     &lt;ul class="list-unstyled card-option&gt;
+                            |       &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+                            |     &lt;/ul&gt;
+                            |   &lt;/div&gt;
+                            | &lt;/div&gt;
+                            | &lt;div class="card-body mt-0 state"&gt;
+                            |   &lt;ul class="d-flex"&gt;
+                            |     &lt;li&gt;
+                            |       &lt;img src="../assets/images/dashboard/04.jpg"/&gt;
+                            |       &lt;div class="Countries"&gt;
+                            |         &lt;span class="rounded-pill badge-primary"&gt;
+                            |         &lt;h5"&gt;&lt;Uniter States&gt;
+                            |         &lt;h6 class="mt-1 mb-0"&gt;&lt;60%&gt;
+                            |       &lt;/div&gt;
+                            |     &lt;/li&gt;
+                            |     &lt;li&gt;
+                            |       &lt;img src="../assets/images/dashboard/05.jpg"/&gt;
+                            |       &lt;div class="Countries"&gt;
+                            |         &lt;span class="rounded-pill badge-primary"&gt;
+                            |         &lt;h5"&gt;&lt;Germany&gt;
+                            |         &lt;h6 class="mt-1 mb-0"&gt;&lt;51%&gt;
+                            |       &lt;/div&gt;
+                            |     &lt;/li&gt;
+                            |     &lt;li&gt;
+                            |       &lt;img src="../assets/images/dashboard/06.jpg"/&gt;
+                            |       &lt;div class="Countries"&gt;
+                            |         &lt;span class="rounded-pill badge-primary"&gt;
+                            |         &lt;h5"&gt;&lt;New Zealand&gt;
+                            |         &lt;h6 class="mt-1 mb-0"&gt;&lt;52%&gt;
+                            |       &lt;/div&gt;
+                            |     &lt;/li&gt;
+                            |     &lt;li&gt;
+                            |       &lt;img src="../assets/images/dashboard/07.jpg"/&gt;
+                            |       &lt;div class="Countries"&gt;
+                            |         &lt;span class="rounded-pill badge-primary"&gt;
+                            |         &lt;h5"&gt;&lt;Australia&gt;
+                            |         &lt;h6 class="mt-1 mb-0"&gt;&lt;62%&gt;
+                            |       &lt;/div&gt;
+                            |     &lt;/li&gt;
+                            |   &lt;/ul&gt;
+                            |   &lt;div class="col-xl-12"&gt;
+                            |     &lt;div class="jvector-map-height" id="asia"&gt;
+                            |   &lt;/div&gt;
+                            | &lt;/div&gt;
+              .col-xxl-3.col-xl-4.col-md-6.box-col-4.notification
+                .card
+                  .card-header.pb-0
+                    h3.m-0 Activity Timeline
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          div
+                            i.icon-settings
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-
+                  .card-body
+                    .activity-timeline
+                      .d-flex.align-items-start
+                        .activity-line
+                        .activity-dot-primary
+                        .flex-grow-1
+                          p.todo-font
+                            span.font-primary 30-06-2023
+                            | Today
+                          span.f-w-700 Updated Product
+                          p.mb-0 Quisque a consequat ante sit amet.
+                        i.fa.fa-circle.circle-dot-primary.pull-right
+                      .d-flex.align-items-start
+                        .activity-dot-dark
+                        .flex-grow-1
+                          p.todo-font
+                            span.font-dark 30-06-2023
+                            | Today
+                          span.f-w-700 James just like your product
+                          p.mb-0 Design and style should work toward making look good.
+                        i.fa.fa-circle.circle-dot-dark.pull-right
+                      .d-flex.align-items-start
+                        .activity-dot-secondary
+                        .flex-grow-1
+                          p.todo-font
+                            span.font-secondary 25-06-2023
+                            | Today
+                            span.badge.badge-secondary.ms-2 New
+                          span.f-w-700 Jihan Doe just like your product
+                          p If you have it, you can make anything look good.
+                          ul.img-wrapper
+                            li 
+                              img.img-30.img-fluid(src="../assets/images/dashboard/04.png", alt="")
+                            li
+                              img.img-fluid(src="../assets/images/dashboard/09.png", alt="")
+                        i.fa.fa-circle.circle-dot-secondary.pull-right
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#activity1')
+                        i.icofont.icofont-copy-alt
+                      pre
+                        code.language-html#activity1
+                          |&lt;div class="card"&gt;
+                          |   &lt;div class="card-header pb-0"&gt;
+                          |     &lt;div class="d-flex justify-content-between"&gt;
+                          |       &lt;div class="flex-grow-1"&gt;
+                          |         &lt;h3&gt; Activity Timeline&lt;/h4&gt;
+                          |       &lt;/div&gt;
+                          |       &lt;div class="setting-list"&gt;
+                          |         &lt;ul class="list-unstyled setting-option"&gt;
+                          |           &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+                          |           &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |           &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |           &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |           &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                          |           &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+                          |         &lt;/ul&gt;
+                          |       &lt;/div&gt;
+                          |     &lt;/div&gt;
+                          |   &lt;/div&gt;
+                          |   &lt;div class="card-body"&gt;
+                          |     &lt;div class="activity-timeline"&gt;
+                          |       &lt;div class="d-flex align-items-start"&gt;
+                          |         &lt;div class="activity-line"&gt;&lt;/div&gt;
+                          |         &lt;div class="activity-dot-secondary"&gt;&lt;/div&gt;
+                          |         &lt;div class="flex-grow-1"&gt;
+                          |           &lt;p class="todo-font mt-0"&gt; Today
+                          |             &lt;span class="font-primary"&gt; 30-06-2023 &lt;/span&gt;
+                          |           &lt;/p &gt;
+                          |           &lt;span class="f-w-700" Updated Product
+                          |           &lt;p class="mb-0"&gt; Quisque a consequat ante sit amet. &lt;/p&gt;
+                          |         &lt;/div&gt;
+                          |         &lt;i class="fa fa-circle circle-dot-secondary pull-right"&gt;&lt;/i&gt;
+                          |       &lt;/div&gt;
+                          |       &lt;div class="d-flex align-items-start"&gt;
+                          |         &lt;div class="activity-dot-secondary"&gt;&lt;/div&gt;
+                          |         &lt;div class="flex-grow-1"&gt;
+                          |           &lt;p class="mt-0 todo-font"&gt;
+                          |             &lt;span class="font-primary"&gt; 25-06-2023 &lt;/span&gt;
+                          |             Today
+                          |           &lt;/p &gt;
+                          |           &lt;span class="f-w-700"&gt; Jihan Doe just like your product
+                          |           &lt;/span&gt;
+                          |           &lt;p class="mb-0"&gt; If you have it, you can make anything look good. &lt;/p&gt;
+                          |         &lt;/div&gt;
+                          |         &lt;i class="fa fa-circle circle-dot-secondary pull-right"&gt;&lt;/i&gt;
+                          |       &lt;/div&gt;
+                          |       &lt;div class="d-flex align-items-start"&gt;
+                          |         &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+                          |         &lt;div class="flex-grow-1"&gt;
+                          |           &lt;p class="todo-font mt-0"&gt;
+                          |             &lt;span class="font-primary"&gt; 30-06-2023 &lt;/span&gt;
+                          |             Today
+                          |             &lt;span class="badge badge-primary ms-2"&gt; New &lt;/span&gt;
+                          |           &lt;/p &gt;
+                          |           &lt;span class="f-w-700"&gt; James just like your product &lt;/span&gt;
+                          |           &lt;p&gt; Design and style should work toward making look good. &lt;/p&gt;
+                          |           &lt;ul&gt;
+                          |             &lt;li&gt;
+                          |               &lt;img class="img-fluid" src="../assets/images/dashboard/04.png" alt=""/&gt;
+                          |             &lt;/li&gt;
+                          |             &lt;li&gt;
+                          |               &lt;img class="img-fluid" src="../assets/images/dashboard/09.png" alt=""/&gt;
+                          |             &lt;/li&gt;
+                          |           &lt;/ul&gt;
+                          |           &lt;i class="fa fa-circle circle-dot-secondary pull-right"&gt;&lt;/i&gt;
+                          |         &lt;/div&gt;
+                          |       &lt;/div&gt;
+                          |     &lt;/div&gt;
+                          |   &lt;/div&gt;
+                          | &lt;/div&gt; 
+              .col-xxl-6.col-xl-4.col-md-12.box-col-4
+                .card
+                  .card-header.pb-0
+                      h3.m-0 Sales Summary
+                  .card-body.p-0
+                    #area-line
+              .col-xl-4.col-md-6.col-sm-12.box-col-4
+                .card.weekend-card
+                  .card-body
+                    img.w-100.mb-3(src='../assets/images/dashboard/01.png' alt="")
+                    .d-flex.align-items-center
+                      .flex-shrink-0
+                        a(href="product-page.html")
+                          span Weekend Sale
+                          p Acer Aspire 5 Gaming Intel Core
+                        .d-flex.align-items-center
+                          h4 4.5
+                          span.pull-right.ms-2
+                            i.fa.fa-star.font-secondary
+                      .flex-grow-1
+                        button.btn Hot
+                        .weekend-price
+                          | $26.00 
+                          del $30.00
+              .col-xl-4.col-md-6.col-sm-12.box-col-4
+                .card.weekend-card
+                  .card-body
+                    img.w-100.mb-3(src='../assets/images/dashboard/02.png' alt="")
+                    .d-flex.align-items-center
+                      .flex-shrink-0
+                        a(href="product-page.html")
+                          span Special Offer
+                          p Airpods 3rd Generation Silicone
+                        .d-flex.align-items-center
+                          h4 4.5
+                          span.pull-right.ms-2
+                            i.fa.fa-star.font-secondary
+                      .flex-grow-1
+                        button.btn 50%
+                        .weekend-price
+                          | $41.00 
+                          del $45.00
+              .col-xl-4.col-md-6.col-sm-12.box-col-4
+                .card.weekend-card
+                  .card-body
+                    img.w-100.mb-3(src='../assets/images/dashboard/03.png' alt="")
+                    .d-flex.align-items-center
+                      .flex-shrink-0
+                        a(href="product-page.html")
+                          span Best Flash Sale
+                          p  Smartwatch with Alexa Built-in
+                        .d-flex.align-items-center
+                          h4 4.5
+                          span.pull-right.ms-2
+                            i.fa.fa-star.font-secondary
+                      .flex-grow-1
+                        button.btn Hot
+                        .weekend-price
+                          | $34.00 
+                          del $32.00
+              .col-xl-8.col-sm-12.box-col-8e.order-xl-1.order-md-2
+                .card.invoice-card
+                    .card-header
+                      h3 Invoice
+                    .card-body.pt-0.manageorder 
+                      .table-responsive.theme-scrollbar
+                        table#information.table.display(style='width:100%')
+                          thead
+                            tr
+                              th Client
+                              th Create
+                              th Due
+                              th Amount
+                              th Sent
+                              th Status
+                          tbody
+                            tr
+                              td
+                                .d-flex.align-items-center
+                                  img(src='../assets/images/dashboard/user/05.jpg' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h5 Eleanor Pena
+                                      span IHC7456-08086
+                              td Aug 15,2023
+                              td Aug 18,2023 
+                              td $6,05,654
+                              td 01
+                              td 
+                                button.btn Done
+                            tr
+                              td
+                                .d-flex
+                                  img(src='../assets/images/dashboard/user/06.jpg' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h5 Arlene Mccoy
+                                      span IHC7456-08086
+                              td Aug 25,2023
+                              td Aug 30,2023
+                              td $5,55,456
+                              td 04
+                              td 
+                                button.btn Pending
+                            tr
+                              td
+                                .d-flex
+                                  img(src='../assets/images/dashboard/user/07.jpg' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h5 Devon Lane
+                                      span IHC7456-08086
+                              td May 08,2023
+                              td May 20,2023
+                              td $2,98,852
+                              td 06
+                              td 
+                                button.btn Done
+                            tr
+                              td
+                                .d-flex
+                                  img(src='../assets/images/dashboard/user/08.jpg' alt="")
+                                  .flex-grow-1.ms-2
+                                    a(href="product-page.html")
+                                      h5 Ronald Richards
+                                      span IHC7456-08086
+                              td Feb 14,2023
+                              td Feb 26,2023
+                              td $3,56,158
+                              td 03
+                              td
+                                button.btn In Progress
+              .col-xl-4.col-md-6.col-sm-12.box-col-4.order-xl-1
+                .card.product-chart
+                  .card-header.pb-0
+                    .header-top
+                      h3.m-0 Product Sales
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            div
+                              i.icon-settings
+                          li
+                            i.view-html.fa.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                  .card-body.pb-0
+                    .d-flex
+                      h3.me-2 $12,000
+                      span (15,080 To Goal)
+                    #product-sales
+                    .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#product-chart')
+                          i.icofont.icofont-copy-alt
+                        pre
+                          code.language-html#product-chart
+                            |&lt;div class="card product-chart"&gt;
+                            | &lt;div class="card-header pb-0"&gt;
+                            |   &lt;div class="header-top"&gt;
+                            |      &lt;h3 class="m-0"&gt; Product Sales&lt;/h3&gt;
+                            |   &lt;div class="card-header-right"&gt;
+                            |     &lt;ul class="list-unstyled card-option&gt;
+                            |       &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+                            |       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+                            |     &lt;/ul&gt;
+                            |   &lt;/div&gt;
+                            |   &lt;div class="card-body pb-0"&gt;
+                            |     &lt;div class="d-flex"&gt;
+                            |       &lt;h3 class="me-2"&gt;$12,000&lt;/h3&gt;
+                            |       &lt;span&gt;(15,080 To Goal)&lt;/span&gt;
+                            |     &lt;/div&gt;
+                            |     &lt;div id="product-sales"&gt;
+                            |   &lt;/div&gt;
+                            | &lt;/div&gt;
+          // Container-fluid Ends
+        include ../../components/footer        
+    include ../../components/footer-files
+    script. 
+      new WOW().init();

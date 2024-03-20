@@ -1,0 +1,98 @@
+// Page Sidebar Start
+- var status_toggle = (sidebar_open ? undefined : 'checked');
+.sidebar-wrapper(data-layout="stroke-svg")
+  div
+    .logo-wrapper
+      a(href='index.html')
+        img.img-fluid(src='../assets/images/logo/logo.png', alt='')
+      .back-btn
+        i.fa.fa-angle-left
+    nav.sidebar-main
+      .left-arrow#left-arrow
+        i(data-feather='arrow-left')
+      #sidebar-menu
+        ul.sidebar-links#simple-bar
+          li.back-btn
+            .mobile-back.text-end
+              span Back
+              i.fa.fa-angle-right.ps-2(aria-hidden='true')
+          li.pin-title.sidebar-main-title
+            div 
+              h6 Pinned
+          li.sidebar-list
+            a.sidebar-link.sidebar-title(href='../template/index.html', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#home')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-home')
+              span Dashboard
+          li.sidebar-list
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#Charts')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-starter-kit')
+              span Starter kit
+            ul.sidebar-submenu.custom-scrollbar
+              li.sidebar-head Starter kit
+              li.main-submenu
+                a.d-flex.sidebar-menu(href='javascript:void(0)')
+                  svg.stroke-icon
+                    use(href='../assets/svg/icon-sprite.svg#Ui-kites')
+                  svg.fill-icon
+                    use(href='../assets/svg/icon-sprite.svg#fill-ui')
+                  | color version
+                  svg.stroke-icon
+                    use(href='../assets/svg/icon-sprite.svg#Arrow-right')
+                ul.submenu-wrapper
+                  li
+                    a(href='index.html') Layout Light
+                  li
+                    a(href='layout-dark.html') Layout Dark
+              li.main-submenu  
+                a.d-flex.sidebar-menu(href='javascript:void(0)')
+                  svg.stroke-icon
+                    use(href='../assets/svg/icon-sprite.svg#Perk-Ui')
+                  svg.fill-icon
+                    use(href='../assets/svg/icon-sprite.svg#fill-Perk-Ui')
+                  | Page layout
+                  svg.stroke-icon
+                    use(href='../assets/svg/icon-sprite.svg#Arrow-right')
+                ul.submenu-wrapper
+                  li
+                    a(href='boxed.html') Boxed
+                  li
+                    a(href='layout-rtl.html') RTL
+              li.main-submenu  
+                a.d-flex.sidebar-menu(href='javascript:void(0)')
+                  svg.stroke-icon
+                    use(href='../assets/svg/icon-sprite.svg#Editor')
+                  svg.fill-icon
+                    use(href='../assets/svg/icon-sprite.svg#fill-Editor')
+                  | Footers
+                  svg.stroke-icon
+                      use(href='../assets/svg/icon-sprite.svg#Arrow-right')
+                ul.submenu-wrapper
+                  li
+                    a(href='footer-light.html') Footer Light
+                  li
+                    a(href='footer-dark.html') Footer Dark
+                  li
+                    a(href='footer-fixed.html') Footer Fixed
+          li.sidebar-list
+            a.sidebar-link.sidebar-title(href='https://support.pixelstrap.com/agent/pixelstrap/pixelstrap/tickets/list/open-cases', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-social')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-social')
+              span Raise Support
+          li.sidebar-list
+            a.sidebar-link.sidebar-title(href='https://docs.pixelstrap.com/cion/document/', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#Editor')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-form')
+              span Document
+      .right-arrow#right-arrow
+        i(data-feather='arrow-right')
+// Page Sidebar Ends

@@ -1,0 +1,266 @@
+// Page Header Start
+.page-header
+  .header-wrapper.row
+    .logo-wrapper
+        a(href='index.html')
+          img.img-fluid(src='../assets/images/logo/logo.png', alt='')
+    svg.stroke-icon.toggle-sidebar
+      use(href='../assets/svg/icon-sprite.svg#Grid').status_toggle.middle.sidebar-toggle 
+    form(action='#', method='get').col-auto.form-inline.search-full
+      .form-group
+        .Typeahead.Typeahead--twitterUsers
+          .u-posRelative
+            input.demo-input.Typeahead-input.form-control-plaintext.w-100(type='text' placeholder='Type to Search ..' name='q' title='' autofocus)
+            svg.search-bg.svg-color
+              use(href='../assets/svg/icon-sprite.svg#Search')
+          .Typeahead-menu
+    .nav-right.col-auto.pull-right.right-header.p-0.ms-auto
+      ul.nav-menus
+        li.serchinput
+          .serchbox
+            svg
+              use(href='../assets/svg/icon-sprite.svg#Search')
+          .form-group.search-form
+              input(type="text" placeholder="Search here...")
+        li.onhover-dropdown
+          .notification-box
+            svg
+              use(href='../assets/svg/icon-sprite.svg#Bell')
+          .onhover-show-div.notification-dropdown
+            h6.f-18.mb-0.dropdown-title Notitications
+            ul
+              li.b-l-primary.border-4.mt-3
+                a(href="email-application.html") 
+                  p
+                    | New Review Receive
+                    span.font-danger 10 min.
+              li.b-l-success.border-4.mt-3
+                a(href="invoice.html")
+                  p
+                    | Transaction $250 Success
+                    span.font-success 1 hr 
+              li.b-l-secondary.border-4.mt-3
+                a(href="email-compose.html") 
+                  p
+                    | Order Place Success
+                    span.font-secondary 3 hr
+              li.b-l-warning.border-4.mt-3
+                a(href="email-application.html") 
+                  p
+                    | Netflix Subscription...
+                    span.font-warning 6 hr
+              li
+                a.f-w-700(href="email-application.html") Check all
+        li.onhover-dropdown
+          svg
+            use(href='../assets/svg/icon-sprite.svg#Bookmark')
+          .onhover-show-div.bookmark-flip
+            .flip-card
+              .flip-card-inner
+                .front
+                  h6.f-18.mb-0.dropdown-title Bookmark
+                  ul.bookmark-dropdown
+                    li
+                      .row
+                        .col-4.text-center
+                          a(href="form-validation.html")
+                            .bookmark-content
+                              .bookmark-icon
+                                i(data-feather='file-text')
+                              span Forms 
+                        .col-4.text-center
+                          a(href="user-profile.html")
+                            .bookmark-content
+                              .bookmark-icon
+                                i(data-feather='user')
+                              span Profile 
+                        .col-4.text-center
+                          a(href="bootstrap-basic-table.html")
+                            .bookmark-content
+                              .bookmark-icon
+                                i(data-feather='server')
+                              span Tables 
+                    li.text-centermedia-body 
+                      a.flip-btn#flip-btn.f-w-700(href="javascript:void(0)") Add New Bookmark
+                .back
+                  ul
+                    li
+                      .bookmark-dropdown.flip-back-content
+                        input(type='text' placeholder='search...')
+                    li
+                      a.f-w-700.d-block.flip-back#flip-back(href="javascript:void(0)")
+                        | Back
+        li.onhover-dropdown
+          .message.notification-box
+            svg
+              use(href='../assets/svg/icon-sprite.svg#Message')
+            span.rounded-pill.badge-secondary 
+          .onhover-show-div.message-dropdown
+            h6.f-18.mb-0.dropdown-title Message                               
+            ul
+              li
+                .d-flex.align-items-start
+                  .message-img.bg-light-primary
+                    img(src="../assets/images/user/3.jpg" alt="")
+                  .flex-grow-1
+                    h5.mb-1
+                      a(href="email-application.html") Emay Walter
+                    p Do you want to go see movie?
+                  .notification-right
+                    i(data-feather="x")
+              li
+                .d-flex.align-items-start
+                  .message-img.bg-light-primary
+                    img(src="../assets/images/user/6.jpg" alt="")
+                  .flex-grow-1
+                    h5.mb-1
+                      a(href="email-application.html") Jason Borne
+                    p Thank you for rating us.
+                  .notification-right
+                    i(data-feather="x")
+              li
+                .d-flex.align-items-start
+                  .message-img.bg-light-primary
+                    img(src="../assets/images/user/10.jpg" alt="")
+                  .flex-grow-1
+                    h5.mb-1
+                      a(href="email-application.html") Sarah Loren
+                    p What`s the project report update?
+                  .notification-right
+                    i(data-feather="x")
+              li
+                a.f-w-700(href="chat.html") Check all
+        li.cart-nav.onhover-dropdown
+          .cart-box
+            svg
+              use(href='../assets/svg/icon-sprite.svg#Buy')
+          .cart-dropdown.onhover-show-div
+            h6.f-18.mb-0.dropdown-title Cart
+            ul
+              li
+                .d-flex
+                  img.img-fluid.b-r-5.img-60(src='../assets/images/ecommerce/05.jpg', alt='')
+                  .flex-grow-1
+                    span Women's Track Suit
+                    .qty-box
+                      .input-group
+                        span.input-group-prepend
+                          button.btn.quantity-left-minus(type='button' data-type='minus' data-field='')
+                            | -
+                        input.form-control.input-number(type='text' name='quantity' value='1')
+                        span.input-group-prepend
+                          button.btn.quantity-right-plus(type='button' data-type='plus' data-field='')
+                            | +
+
+                    h6.font-primary $500
+                  .close-circle
+                    a.bg-danger(href='#')
+                      i(data-feather='x')
+              li
+                .d-flex
+                  img.img-fluid.b-r-5.img-60(src='../assets/images/ecommerce/02.jpg', alt='')
+                  .flex-grow-1
+                    span Men's Jacket
+                    .qty-box
+                      .input-group
+                        span.input-group-prepend
+                          button.btn.quantity-left-minus(type='button' data-type='minus' data-field='')
+                            | -
+                        input.form-control.input-number(type='text' name='quantity' value='1')
+                        span.input-group-prepend
+                          button.btn.quantity-right-plus(type='button' data-type='plus' data-field='')
+                            | +
+
+                    h6.font-primary $500.00
+                  .close-circle
+                    a.bg-danger(href='#')
+                      i(data-feather='x')
+
+              li.total
+                h6.mb-0
+                  | Order Total : 
+                  span.f-right $1000.00
+              li.text-center
+                a.d-block.mb-3.view-cart.f-w-700(href='cart.html')
+                  | Go to your cart
+                a.btn.btn-primary.view-checkout(href='checkout.html')
+                  | Checkout  
+        li
+          .mode
+            svg
+              use(href='../assets/svg/icon-sprite.svg#moon')
+        li.language-nav
+          .translate_wrapper
+            .current_lang
+              .lang
+                i.flag-icon.flag-icon-gb
+                span.lang-txt EN                               
+            .more_lang
+              .lang.selected(data-value='en')
+                i.flag-icon.flag-icon-us
+                span.lang-txt
+                  | English
+                  span  (US)
+              .lang(data-value='de')
+                i.flag-icon.flag-icon-de
+                span.lang-txt Deutsch
+              .lang(data-value='es')
+                i.flag-icon.flag-icon-es
+                span.lang-txt Español
+              .lang(data-value='fr')
+                i.flag-icon.flag-icon-fr
+                span.lang-txt Français
+              .lang(data-value='pt')
+                i.flag-icon.flag-icon-pt
+                span.lang-txt
+                  | Português
+                  span  (BR)
+              .lang(data-value='cn')
+                i.flag-icon.flag-icon-cn
+                span.lang-txt 简体中文
+              .lang(data-value='ae')
+                i.flag-icon.flag-icon-ae
+                span.lang-txt
+                  | لعربية 
+                  span  (ae)
+        li.profile-nav.onhover-dropdown.pe-0.py-0
+          .d-flex.align-items-center.profile-media
+            img.b-r-25(src='../assets/images/dashboard/profile.png', alt='')
+            .flex-grow-1.user
+              span Helen Walter
+              p.mb-0.font-nunito Admin 
+                i.middle.fa.fa-angle-down
+          ul.profile-dropdown.onhover-show-div
+            li
+              a(href='user-profile.html')
+                i(data-feather='user')
+                span Account 
+            li
+              a(href='email-application.html')
+                i(data-feather='mail')
+                span Inbox
+            li
+              a(href='task.html')
+                i(data-feather='file-text')
+                span Taskboard
+            li
+              a(href='edit-profile.html')
+                i(data-feather='settings')
+                span Settings
+            li
+              a(href='login.html')
+                i(data-feather='log-in') 
+                span Log in
+
+    //- .d-lg-none.mobile-toggle.pull-right
+    //-     i(data-feather='more-horizontal')
+    script.result-template(type='text/x-handlebars-template').
+      <div class="ProfileCard u-cf">                        
+      <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+      <div class="ProfileCard-details">
+      <div class="ProfileCard-realName">{{name}}</div>
+      </div>
+      </div>
+    script.empty-template(type='text/x-handlebars-template').
+      <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+// Page Header Ends
