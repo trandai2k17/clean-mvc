@@ -1,0 +1,11 @@
+﻿@using clean_mvc.Domain.Entities;
+@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+
+    </div>
+}
